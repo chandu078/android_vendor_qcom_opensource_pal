@@ -5,6 +5,8 @@ ifeq ($(TARGET_USES_QCOM_AUDIO_AR),true)
 LOCAL_PATH := $(call my-dir)
 PAL_BASE_PATH := $(call my-dir)
 
+ifneq ($(QCPATH),)
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libarpal_headers
@@ -167,6 +169,8 @@ LOCAL_SHARED_LIBRARIES += libtinyalsa libtinycompress
 endif
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif
 
 #-------------------------------------------
 #            Build CHARGER_LISTENER LIB
